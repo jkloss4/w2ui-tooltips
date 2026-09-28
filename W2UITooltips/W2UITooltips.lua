@@ -20,6 +20,9 @@ local TOOLTIP_NAMES = {
 
 local STORAGE_KEY = "W2UITooltipsFramePieces"
 
+-- How far W2UI's border extends past each tooltip edge (W2UI's frame outset).
+local BORDER_OUTSET = 5
+
 local function keepHidden(nineSlice)
     nineSlice:Hide()
 end
@@ -28,6 +31,10 @@ end
 --- @param tooltip table
 local function styleTooltip(tooltip)
     W2UI.Theme:StyleEquipmentMenuFrame(tooltip, { storageKey = STORAGE_KEY })
+
+    -- Tooltips are clamped to the screen by their own edges, which would leave the border
+    -- partly off screen at the edges. Clamp by the border's edges instead.
+    tooltip:SetClampRectInsets(-BORDER_OUTSET, BORDER_OUTSET, BORDER_OUTSET, -BORDER_OUTSET)
 
     local nineSlice = tooltip.NineSlice
     if nineSlice then
@@ -38,7 +45,7 @@ local function styleTooltip(tooltip)
     end
 end
 
--- W2UI's border extends past each tooltip's edge (by W2UI's frame outset, 5), but Blizzard
+-- W2UI's border extends past each tooltip's edge (by BORDER_OUTSET), but Blizzard
 -- places comparison tooltips edge to edge, so neighbouring borders would overlap. After
 -- Blizzard anchors them, push each side-by-side attachment apart by both borders' outsets.
 local COMPARISON_GAP = 9
