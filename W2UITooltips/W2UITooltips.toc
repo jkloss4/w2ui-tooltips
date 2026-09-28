@@ -1,0 +1,21 @@
+## Interface: 120100
+## Title: W2UI Tooltips
+## Notes: Gives every tooltip W2UI's styled border, not just those over W2UI's own windows.
+## Version: 1.0.0
+## Author: Jay Kloss
+## Dependencies: W2UI
+## OptionalDeps: TipTac
+## IconTexture: Interface\AddOns\W2UI\Media\icon.tga
+## Category-enUS: User Interface
+## Category-deDE: Benutzerinterface
+## Category-esES: Interfaz de usuario
+## Category-esMX: Interfaz de usuario
+## Category-frFR: Interface utilisateur
+## Category-itIT: Interfaccia utente
+## Category-koKR: 사용자 인터페이스
+## Category-ptBR: Interface do usuário
+## Category-ruRU: Интерфейс пользователя
+## Category-zhCN: 用户界面
+## Category-zhTW: 使用者介面
+
+W2UITooltips.lua
