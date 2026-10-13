@@ -1,4 +1,4 @@
-## Interface: 120100
+## Interface: 120100, 120105
 ## Title: W2UI Tooltips
 ## Notes: Gives every tooltip W2UI's styled border, not just those over W2UI's own windows.
 ## Version: 1.0.0
